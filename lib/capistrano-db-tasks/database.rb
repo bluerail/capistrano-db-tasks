@@ -18,7 +18,7 @@ module Database
         username = @config['username'] || @config['user']
         (username ? " -u #{username} " : '') + (@config['password'] ? " -p'#{@config['password']}' " : '') + (@config['host'] ? " -h #{@config['host']}" : '') + (@config['socket'] ? " -S#{@config['socket']}" : '')
       elsif postgresql?
-        (@config['username'] ? " -U #{@config['username']} " : '') + (@config['host'] ? " -h #{@config['host']}" : '')
+        (@config['username'] ? " -U #{@config['username']} " : '') + (@config['host'] ? " -h #{@config['host']}" : '') + (@config['port'] ? " -p #{@config['port']}" : '')
       end
     end
 
